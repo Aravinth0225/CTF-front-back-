@@ -11,6 +11,7 @@ import Register from "./components/Register.jsx";
 import TechCategories from "./components/TechCategories";
 import About from "./components/About.jsx";
 import DashboardPage from "./components/DashboardPage";
+import FlagForm from "./components/FlagForm";
 //import Scoreboard from "./components/Scoreboard";
 //import Categories from "./components/Categories";
 
@@ -95,7 +96,8 @@ function App() {
           <Route path="/categories" element={<TechCategories />} />
           <Route path="/about" element={<About />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          
+          <Route path="/flags" element={<FlagForm />} />
+
           <Route path="/challenges/0x01" element={<Challenge0x01 />} />
           <Route path="/challenges/0x02" element={<Challenge0x02 />} />
           <Route path="/challenges/0x03" element={<Challenge0x03 />} />

@@ -37,6 +37,12 @@ try {
 } catch (err) {
     console.error("❌ Error loading registerRoutes:", err);
 }
+try {
+    const flagRoutes = require("./routes/flags");
+    app.use("/api/flags", flagRoutes);
+} catch (err) {
+    console.error("❌ Error loading flagRoutes:", err);
+}
 
 // Handle 404 for Undefined Routes
 app.use((req, res, next) => {
