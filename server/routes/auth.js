@@ -1,51 +1,30 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const User = require("../models/User");
-const Register = require("../models/Register");
-
 const router = express.Router();
-const SECRET_KEY = "your_secret_key"; // Change this in production!
 
-// Register Team
-router.post("/register", async (req, res) => {
-    try {
-        const newTeam = new Register(req.body);
-        await newTeam.save();
-        res.status(201).json({ message: "Team Registered Successfully" });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Register User
-router.post("/signup", async (req, res) => {
-    try {
-        const { username, password } = req.body;
-        const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = new User({ username, password: hashedPassword });
-        await newUser.save();
-        res.status(201).json({ message: "User Registered Successfully" });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
-    }
-});
-
-// Login User
 router.post("/login", async (req, res) => {
     try {
+        console.log("🔍 Received Request:", req.body); // Debugging
+
         const { username, password } = req.body;
-        const user = await User.findOne({ username });
 
-        if (!user) return res.status(400).json({ message: "Invalid Username" });
+        // Ensure username is treated as a string
+        const user = await User.findOne({ username: String(username) });
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) return res.status(400).json({ message: "Invalid Password" });
+        console.log("🔍 Found User:", user); // Debugging
 
-        const token = jwt.sign({ userId: user._id }, SECRET_KEY, { expiresIn: "1h" });
-        res.json({ message: "Login Successful", token });
-    } catch (error) {
-        res.status(500).json({ error: error.message });
+        if (!user) {
+            return res.status(400).json({ success: false, message: "❌ Team ID not found" });
+        }
+
+        if (user.password !== password) {
+            return res.status(400).json({ success: false, message: "❌ Incorrect Password" });
+        }
+
+        res.json({ success: true, message: "✅ Login Successful!" });
+
+    } catch (err) {
+        res.status(500).json({ success: false, message: "❌ Server Error" });
     }
 });
 
