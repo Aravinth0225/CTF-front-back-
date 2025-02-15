@@ -1,0 +1,192 @@
+.app-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-menu button:hover {
+  background-color: #444;
+}
+
+.hero-container {
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+.hero-container h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-container p {
+  font-size: 30px;
+}
+
+.hero-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("") no-repeat center center/cover;
+}
+
+.hero-container {
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.077);
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.hero-container h1 {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.hero-container h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.hero-container p {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.hero-button {
+  margin: 50px;
+  /* margin-top: 100px; */
+  padding: 15px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #191fe1fb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #1f00e6e2;
+}
+
+.hero-container {
+  text-align: center;
+  color: white;
+  z-index: 1;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-container {
+  position: absolute;
+  bottom: 35%; /* Moves buttons closer to the bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+/* .hero-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff6600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #e65c00;
+} */
+
+.hero-button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6600; /* Text color changed to match original background */
+  background-color: transparent; /* Transparent background */
+  border: 2px solid #ff6600; /* Border color */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #ff66000f; /* Background appears on hover */
+  color: #fff; /* Text color changes to white */
+}
+
+
+.glow-text {
+  text-shadow: 0px 0px 10px #f28a1a, 0px 0px 20px #ea4d04;
+  padding: 15px;
+}
+
+/* Quote Animation */
+.quote {
+  font-size: 1rem;
+  margin: 20px;
+  max-width: 5000px;
+  font-style: italic;
+  transition: opacity 0.6s ease-in-out;
+  text-shadow: 0px 0px 10px #f28a1a, 0px 0px 20px #ea4d04;
+  padding: 2px;
+}
+
+/* Fade-in Effect */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
