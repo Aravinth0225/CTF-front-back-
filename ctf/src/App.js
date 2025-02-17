@@ -1,7 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -22,7 +20,7 @@ import bgVideo from "./video/bg-img.mp4";
 
 
 //challenges
-import Challenge0x01 from "./components/challenges/Challenge0x01.jsx"
+import Challenge0x01 from "./components/challenges/Challenge0x01.jsx";
 import Challenge0x02 from "./components/challenges/Challenge0x02.jsx";
 import Challenge0x03 from "./components/challenges/Challenge0x03.jsx";
 import Challenge0x04 from "./components/challenges/Challenge0x04.jsx";

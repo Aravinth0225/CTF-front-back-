@@ -63,7 +63,7 @@ const TechCategories = () => {
       </video>
 
       {/* Main Content */}
-      <div className="tech-content">
+      <div className="tech-content"> <br />
         <h1 className="tech-title">Challenges</h1>
         <p className="tech-subtitle">“Every lock has a key. Every system has a flaw.”</p>
         <div className="tech-underline"></div>

@@ -5,7 +5,6 @@ import "./Navbar.css"; // Import the CSS file for styling
 const Navbar = () => {
   return (
     <nav className="navbar">
-      
       <ul className="nav-links">
         <li>
           <Link to="/">Home</Link>

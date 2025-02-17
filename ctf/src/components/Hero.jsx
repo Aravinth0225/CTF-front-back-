@@ -22,7 +22,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setQuoteIndex((prevIndex) => (prevIndex + 1) % hackerQuotes.length);
-    }, 4000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, []);
