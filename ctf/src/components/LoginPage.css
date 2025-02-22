@@ -28,7 +28,8 @@ body {
   
   .left-section {
     flex: 1;
-    padding: 50px;
+    padding: 35px;
+    padding-bottom: 350px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -38,18 +39,19 @@ body {
   
   .left-section h1 {
     font-size: 2rem;
-    color: #ff6600;
+    color: #e7dad1;
     margin-bottom: 16px;
   }
   
   .left-section h2 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
     font-weight: bold;
+    margin-bottom: 260px;
   }
   
   .right-section {
     flex: 1;
-    padding: 40px;
+    padding: 50px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -57,29 +59,32 @@ body {
   }
   
   .right-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-bottom:  20px;
   }
   
   .right-section p {
-    font-size: 0.9rem;
-    margin-bottom: 24px;
+    font-size: 19px;
+    margin-bottom: 25px;
+    padding-bottom:  20px;
   }
   
   .input-group {
     position: relative;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
   
   .input-group input {
-    width: 85%;
-    padding: 12px 16px;
+    width: 100%;
+    padding: 15px 15px;
     padding-right: 40px;
-    border: 1px solid #444;
+    border: 1px solid #5d5a5a;
     border-radius: 8px;
-    background: #222;
+    background: #d7cdcd00;
     color: #fff;
     font-size: 1rem;
+    padding-bottom:  15px;
   }
   
   .input-group .icon-user,

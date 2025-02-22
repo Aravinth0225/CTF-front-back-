@@ -57,12 +57,12 @@
 /* Challenge Card Container */
 .tech-card {
   background: #0d0d0d;
-  border: 2px solid #2bed09;
+  border: 2px solid #2bed09e8;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
   color: #d4c1ff;
-  box-shadow: 0px 0px 10px rgba(4, 246, 36, 0.644);
+  box-shadow: 0px 0px 10px rgba(4, 246, 36, 0);
   transition: transform 0.2s ease-in-out;
 }
 
@@ -181,11 +181,11 @@
   display:flex;
   align-items: center;
   width: 100%;  /* Ensures it takes the full available width */
-  max-width: 225px; /* Adjust width as needed */
+  max-width: 300px; /* Adjust width as needed */
   background: #000000;
   border-radius: 10px;
-  border: 2px solid #333;
-  margin: 3px;
+  border: 1px solid #333;
+  margin: 4px;
 }
 
 /* Flag Input */
@@ -195,7 +195,7 @@
   border: none;
   padding: 15px;
   color: #d4c1ff;
-  font-size: 14px;
+  font-size: 15px;
   text-align: center;
   outline: none;
 }
@@ -211,7 +211,6 @@
   background: transparent;
   border: 2px solid #0dbf67;
   color: #0dbf67;
-  margin-left: 30px;
   padding: 10px 12px;
   font-size: 16px;
   border-radius: 6px;

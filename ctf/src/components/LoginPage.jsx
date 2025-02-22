@@ -37,8 +37,9 @@ const LoginPage = () => {
     <div className="login-page">
       <div className="login-container">
         <div className="left-section">
-          <h1>Byte Buster's Club</h1>
+          <h1>Byte Buster's Club</h1> 
           <h2>Learn CyberSecurity</h2>
+          {/* <br /> <br /> <br /> <br /> <br /> <br /> <br /><br />  */}
         </div>
         <div className="right-section">
           <h2>Start Hacking !!!</h2>

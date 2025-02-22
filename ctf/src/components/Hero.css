@@ -53,6 +53,8 @@
 .hero-container h1 {
   font-size: 3rem;
   font-weight: bold;
+  font-style: italic;
+  margin-top: 330px;
 }
 
 .hero-container p {
@@ -124,24 +126,8 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 5px;
+  gap: px;
 }
-
-/* .hero-button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #ff6600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.hero-button:hover {
-  background-color: #e65c00;
-} */
 
 .hero-button {
   padding: 12px 24px;
@@ -149,7 +135,7 @@
   font-weight: bold;
   color: #ff6600; /* Text color changed to match original background */
   background-color: transparent; /* Transparent background */
-  border: 2px solid #ff6600; /* Border color */
+  border: 2px solid #EB5A3C; /* Border color */
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -162,7 +148,7 @@
 
 
 .glow-text {
-  text-shadow: 0px 0px 10px #f28a1a, 0px 0px 20px #ea4d04;
+  text-shadow: 0px 0px 10px #0717f7, 0px 0px 20px #0dc4ed;
   padding: 15px;
 }
 
@@ -173,7 +159,7 @@
   max-width: 5000px;
   font-style: italic;
   transition: opacity 0.6s ease-in-out;
-  text-shadow: 0px 0px 10px #f28a1a, 0px 0px 20px #ea4d04;
+  text-shadow: 0px 0px 10px #12bfe2, 0px 0px 20px #0cb4f1;
   padding: 2px;
 }
 
@@ -190,3 +176,69 @@
     opacity: 1;
   }
 }
+
+.card-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top:70px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  padding: 30px;
+  width: 330px;
+  text-align: center;
+  color: #0d1fe6;
+  border: 2px solid #001aff; /* Neon hacker border */
+  box-shadow: 0 0 12px rgba(30, 50, 198, 0.6); /* Neon glow effect */
+  transition: all 0.2s ease-in-out;
+  min-height: 250px; /* Ensures consistent card size */
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(30, 0, 255, 0.9); /* Stronger glow on hover */
+  transform: scale(1.03);
+}
+
+.card-title {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgba(21, 206, 244, 0.932);
+}
+
+.challenger-text {
+  color: #00ffff;
+}
+
+/* Buttons are now placed after the card */
+.card-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 20px; /* Ensures spacing between card and buttons */
+}
+
+.hero-button {
+  background: transparent;
+  border: 2px solid #00e6e6;
+  color: #00e6e6;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-button:hover {
+  background: #00e6e6;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+}
+

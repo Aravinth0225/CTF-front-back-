@@ -1,0 +1,66 @@
+.scoreboard-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers full screen */
+    z-index: -1; /* Send video to background */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.038); /* Dark overlay for readability */
+}
+
+.title {
+    position: relative;
+    color: limegreen;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.scoreboard-table {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    border-collapse: collapse;
+    background: black;
+    color: white;
+    text-align: center;
+    z-index: 2; /* Keep table above video */
+}
+
+.scoreboard-table th,
+.scoreboard-table td {
+    padding: 12px;
+    border: 1px solid white;
+}
+
+.rank {
+    font-weight: bold;
+}
+
+.team-name {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.score {
+    font-weight: bold;
+    color: limegreen;
+}

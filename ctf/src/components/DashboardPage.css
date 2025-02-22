@@ -1,26 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 .dashboard-container {
-    text-align: center;
-    padding: 20px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(52, 193, 52);
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  overflow: auto;
+}
+
+/* Background Video */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.06);
+  z-index: -1;
+}
+
+/* Flexbox layout */
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.left-section, .right-section {
+  width: 50%;
+  text-align: left;
+  padding-bottom: 5px;
+}
+
+/* Right section alignment */
+.right-section {
+  text-align: right;
+}
+
+.hacker-text {
+  font-size: 36px;
+  font-style:oblique;
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 10px rgba(96, 231, 96, 0);
+  padding: 25px;
+  margin-top: 50px;
+}
+
+.team-name, .score, .time{
+  font-size: 35px;
+  font-weight: bold;
+  color: rgb(74, 240, 74);
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0), 0 0 20px rgba(129, 235, 129, 0);
+  padding: 25px;
+}
+
+.motto, .rank {
+  font-size: 20px;
+  color: #04ff0089;
+  text-shadow: 0 0 5px rgba(113, 225, 113, 0);
+  margin-top: 15px;
+  margin-left: 25px;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 2px 0px #ebdfdf00, -2px -2px 0px #00ff2f00;
   }
-  
-  table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
+  50% {
+    text-shadow: -2px -2px 0px #e1969600, 2px 2px 0px #00ff37;
   }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: center;
+  100% {
+    text-shadow: 2px -2px 0px #c1919100, -2px 2px 0px #00ff4400;
   }
-  
-  th {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
+}
+
+.team-name, .score, .time {
+  animation: glitch 0.5s infinite alternate;
+}
