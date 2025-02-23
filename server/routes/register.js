@@ -61,5 +61,42 @@ router.get("/team/:team_id", async (req, res) => {
       res.status(500).json({ error: "Failed to fetch team data" });
   }
 });
+// Update team rank by _id
+// Update team rank by team_id
+router.put("/update/:team_id", async (req, res) => {
+    try {
+        const { team_name, member1, member2, member3, department, year, phone, college, scores, rank } = req.body;
+
+        // Find the team by team_id and update the provided fields
+        const updatedTeam = await Register.findOneAndUpdate(
+            { team_id: req.params.team_id }, // Search condition
+            { 
+                $set: { team_name, member1, member2, member3, department, year, phone, college, scores, rank } 
+            },
+            { new: true, runValidators: true } // Return updated document & validate data
+        );
+
+        if (!updatedTeam) {
+            return res.status(404).json({ error: "Team not found" });
+        }
+
+        res.json({ message: "Team details updated successfully!", team: updatedTeam });
+
+    } catch (err) {
+        console.error("❌ Update Error:", err);
+        res.status(500).json({ error: "Failed to update team details" });
+    }
+});
+
+// Get all teams
+router.get("/teams", async (req, res) => {
+    try {
+        const teams = await Register.find().sort({ scores: -1 }); // Sort by score (highest first)
+        res.json(teams);
+    } catch (err) {
+        console.error("❌ Error fetching teams:", err);
+        res.status(500).json({ error: "Failed to fetch team data" });
+    }
+});
 
 module.exports = router;
