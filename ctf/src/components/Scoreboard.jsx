@@ -7,22 +7,28 @@ const Scoreboard = () => {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/scores") // Adjust API endpoint
-      .then((response) => {
-        // Sort teams by score in descending order
-        const sortedTeams = response.data.sort((a, b) => b.score - a.score);
+    const fetchTeams = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/register/teams"); // ✅ Correct API route
+
+        // Ensure teams are sorted by rank in ascending order (1st rank first)
+        const sortedTeams = response.data.sort((a, b) => a.rank - b.rank);
         setTeams(sortedTeams);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("Error fetching scoreboard data:", error);
-      });
+      }
+    };
+
+    fetchTeams();
+    const interval = setInterval(fetchTeams, 60000); // Auto-refresh every 1 minute
+
+    return () => clearInterval(interval); // Cleanup on unmount
   }, []);
 
   return (
     <div className="scoreboard-container">
       <video autoPlay loop muted className="bg-video">
-       <source src={hackerVideo} type="video/mp4" />
+        <source src={hackerVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="overlay"></div>
@@ -33,18 +39,18 @@ const Scoreboard = () => {
             <th>Rank</th>
             <th>Team Name</th>
             <th>Year</th>
-            <th>Dept</th>
+            <th>Department</th>
             <th>Score</th>
           </tr>
         </thead>
         <tbody>
-          {teams.map((team, index) => (
+          {teams.map((team) => (
             <tr key={team.team_id}>
-              <td className="rank">{index + 1}</td>
+              <td className="rank">{team.rank}</td>
               <td className="team-name">{team.team_name}</td>
               <td>{team.year}</td>
-              <td>{team.dept}</td>
-              <td className="score">{team.score}</td>
+              <td>{team.department}</td>
+              <td className="score">{team.scores}</td> {/* ✅ Ensure correct field name */}
             </tr>
           ))}
         </tbody>
