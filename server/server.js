@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 require("dotenv").config();
-
+const Register = require("./models/Register"); 
 const app = express();
 
 // Middleware
@@ -54,6 +54,23 @@ app.use((err, req, res, next) => {
     console.error("❌ Error:", err.stack);
     res.status(500).json({ error: "Something went wrong!" });
 });
+
+const updateRanks = async () => {
+    try {
+        const teams = await Register.find().sort({ scores: -1 }); // Sort by scores (Descending)
+
+        for (let i = 0; i < teams.length; i++) {
+            await Register.findByIdAndUpdate(teams[i]._id, { rank: i + 1 }); // Assign rank based on position
+        }
+
+        //console.log("✅ Ranks updated based on scores");
+    } catch (err) {
+        console.error("❌ Error updating ranks:", err);
+    }
+};
+
+// Run every 1 minute
+setInterval(updateRanks, 10 * 1000);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
