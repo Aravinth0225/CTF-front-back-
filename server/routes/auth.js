@@ -28,4 +28,18 @@ router.post("/login", async (req, res) => {
     }
 });
 
+router.post("/logout", (req, res) => {
+    try {
+        // If using sessions
+        if (req.session) {
+            req.session.destroy(() => {
+                return res.json({ success: true, message: "✅ Logged out successfully!" });
+            });
+        } else {
+            return res.json({ success: true, message: "✅ Logged out successfully!" });
+        }
+    } catch (err) {
+        res.status(500).json({ success: false, message: "❌ Server Error" });
+    }
+});
 module.exports = router;
