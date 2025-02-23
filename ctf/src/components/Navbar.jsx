@@ -1,8 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./Navbar.css"; // Import the CSS file for styling
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await axios.post("http://localhost:5000/api/auth/logout");
+      localStorage.removeItem("loggedInTeam"); // Clear local storage
+      navigate("/"); // Redirect to home
+      alert("Logout Success");
+    } catch (err) {
+      console.error("❌ Logout failed", err);
+      alert("❌ Logout failed");
+    }
+    
+  };
+
   return (
     <nav className="navbar">
       <ul className="nav-links">
@@ -22,7 +38,9 @@ const Navbar = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/logout">Log Out</Link>
+        <Link to="#" onClick={handleLogout} className="logout-link">
+    Log Out
+  </Link>
         </li>
       </ul>
     </nav>
