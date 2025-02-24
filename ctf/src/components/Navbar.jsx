@@ -2,7 +2,6 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Navbar.css"; // Import the CSS file for styling
-
 const Navbar = () => {
   const navigate = useNavigate();
 

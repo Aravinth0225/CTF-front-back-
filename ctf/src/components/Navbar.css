@@ -78,10 +78,10 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 15px;
+  top: 13px;
   left: 50%;
   transform: translateX(-50%);
-  width: 55%;
+  width: 60%;
   background: rgba(255, 255, 255, 0); /* Semi-transparent */
   backdrop-filter: blur(10px); /* Glass effect */
   padding: 13px 18px;
@@ -105,9 +105,9 @@
 .nav-links li a {
   text-decoration: none;
   color: rgb(12, 199, 237);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 15px 18px;
+  padding: 16px 18px;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
 }
@@ -116,7 +116,7 @@
 .nav-links li a:hover {
   background: rgba(81, 223, 233, 0);
   color: white;
-  box-shadow: 0 3px 6px rgba(45, 209, 242, 0.822);
+  box-shadow: 0 3px 6px rgb(8, 201, 239);
   transform: translateY(-3px);
 }
 
